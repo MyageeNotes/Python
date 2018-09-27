@@ -1,5 +1,3 @@
-import sys
-
 figures = [
 'A','B','C','D','E','F','G',
 'H','I','J','K','L','M','N',
@@ -8,8 +6,17 @@ figures = [
 ]
 
 while True:
-	key = input()
+	mes_in = input()
+	
+	if mes_in != "exit":	
+		mes_out = ""
 
-	for i in range(len(figures)):
-		if(key == figures[i]):
-			print(figures[(i+10)%26])
+		for j in range(len(mes_in)):
+			for i in range(len(figures)):
+				if(mes_in[j] == figures[i]):
+					mes_out += figures[(i+10)%26]
+					break
+		
+		print (mes_in + " -> " + mes_out)
+	else:
+		exit()
